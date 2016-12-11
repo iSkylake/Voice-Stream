@@ -1,0 +1,24 @@
+{
+  "name": "voice-stream",
+  "version": "1.0.0",
+  "description": "Voice stream using Node.js to record and store it.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iSkylake/Voice-Stream.git"
+  },
+  "author": "Llorch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iSkylake/Voice-Stream/issues"
+  },
+  "homepage": "https://github.com/iSkylake/Voice-Stream#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "fs": "0.0.1-security",
+    "node-record-lpcm16": "^0.1.8"
+  }
+}
