@@ -6,16 +6,32 @@ var fs = require('fs')
 
 //Record audio
 
-	console.log('Record start')
-	var file = fs.createWriteStream('test.wav', { encoding: 'binary' })
+	// console.log('Record start')
+	// var file = fs.createWriteStream('test.wav', { encoding: 'binary' })
 
-	record.start().pipe(file)
+	// record.start().pipe(file)
 
-	// Stop recording after three seconds
-	setTimeout(function () {
-	  record.stop()
-	  console.log('Record stop')
-	}, 10000)
+	// setTimeout(function () {
+	//   record.stop()
+	//   console.log('Record stop')
+	// }, 10000)
+
+	app.use(express.static('public'));
+
+	app.get('/', function(){
+		res.render('index.html');
+	});
+
+	app.post('/start', function(req, res){
+		console.log('START');
+		var file = fs.createWriteStream('test.wav', { encoding: 'binary' });
+		record.start().pipe(file);
+	});
+
+	app.post('/stop', function(req, res){
+		console.log('STOP');
+		record.stop();
+	});
 
 app.listen(3000, function(){
 });
