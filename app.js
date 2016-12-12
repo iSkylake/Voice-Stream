@@ -1,8 +1,10 @@
 var express = require('express'),
 	app = express();
 
-var record = require('node-record-lpcm16')
-var fs = require('fs')
+
+var record = require('node-record-lpcm16');
+var fs = require('fs');
+var player = require('play-sound')(opts={});
 
 //Record audio
 
@@ -31,6 +33,12 @@ var fs = require('fs')
 	app.post('/stop', function(req, res){
 		console.log('STOP');
 		record.stop();
+	});
+
+	app.get('/play', function(){
+		player.play('test.wav', function(err){
+			if(err) throw err
+		});
 	});
 
 app.listen(3000, function(){

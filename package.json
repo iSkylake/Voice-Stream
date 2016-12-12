@@ -19,6 +19,7 @@
   "dependencies": {
     "express": "^4.14.0",
     "fs": "0.0.1-security",
-    "node-record-lpcm16": "^0.1.8"
+    "node-record-lpcm16": "^0.1.8",
+    "play-sound": "^1.1.1"
   }
 }
