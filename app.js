@@ -35,7 +35,7 @@ var player = require('play-sound')(opts={});
 		record.stop();
 	});
 
-	app.get('/play', function(){
+	app.post('/play', function(){
 		player.play('test.wav', function(err){
 			if(err) throw err
 		});
